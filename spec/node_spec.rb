@@ -15,7 +15,7 @@ describe Node do
         expect(node.data).to eq("plop")
     end
 
-    it "can locate the next node" do
+    it "has a node which defaults to nil" do
         node = Node.new("plop")
 
         expect(node.next_node).to eq(nil)
