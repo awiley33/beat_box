@@ -1,5 +1,6 @@
 require "./lib/linked_list"
 require "./lib/node"
+require "rspec"
 
 describe Node do
 
