@@ -20,14 +20,16 @@ class LinkedList
             current_node.next_node = new_node
         end
         current_node = @head
-        while current_node.next_node == nil
-            return current_node.data
+        until current_node.next_node == nil
+            current_node = current_node.next_node
         end
+        return current_node.data
     end
 
     def count
-        count = 0
-        if @head.next_node.nil?
+        if @head == nil
+            count = 0
+        elsif @head.next_node.nil?
             count = 1
         else
             current_node = @head
@@ -42,5 +44,20 @@ class LinkedList
 
     def to_string
         string = ""
+        current_node = @head
+        if current_node == nil
+            string = ""
+        elsif current_node.next_node.nil?
+            string = "#{current_node.data}"
+        else
+            string = "#{@head.data}"
+            current_node = current_node.next_node
+            loop do
+                string += " #{current_node.data}"
+                break if current_node.next_node.nil?
+                current_node = current_node.next_node
+            end
+        end
+        string
     end
 end
