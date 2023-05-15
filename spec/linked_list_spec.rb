@@ -92,7 +92,59 @@ describe LinkedList do
         expect(list.to_string).to eq("doop deep dee bum bam beep boop")
     end
 
+    it "can add a node to the beginning of a list" do
+        list = LinkedList.new
 
+        expect(list.prepend("dop")).to eq("dop")
+    end
 
+    it "can add a node to the beginning of a populated list" do
+        list = LinkedList.new
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
 
+        expect(list.to_string).to eq("dop plop suu")
+    end
+
+    it "can add a node to the beginning of an empty list" do
+        list = LinkedList.new
+        list.prepend("dop")
+
+        expect(list.to_string).to eq("dop")
+    end
+
+    it "can insert a node anywhere in the list" do
+        list = LinkedList.new
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
+        list.insert(1, "woo")
+
+        expect(list.to_string).to eq("dop woo plop suu")
+    end
+
+    it "can find elements in the list" do
+        list = LinkedList.new
+        list.append("deep")
+        list.append("woo")
+        list.append("shi")
+        list.append("shu")
+        list.append("blop")
+
+        expect(list.find(2, 1)).to eq("shi")
+        expect(list.find(1, 3)).to eq("woo shi shu")
+    end
+
+    it "can check whether a specific piece of data is in the list" do
+        list = LinkedList.new
+        list.append("deep")
+        list.append("woo")
+        list.append("shi")
+        list.append("shu")
+        list.append("blop")
+
+        expect(list.includes?("deep")).to eq(true)
+        expect(list.includes?("dep")).to eq(false)
+    end
 end
