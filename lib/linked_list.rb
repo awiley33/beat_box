@@ -26,6 +26,11 @@ class LinkedList
         return current_node.data
     end
 
+    def prepend(data)
+        @head = Node.new(data, @head)
+        return @head.data
+    end
+
     def count
         if @head == nil
             count = 0
@@ -40,6 +45,18 @@ class LinkedList
             end
         end
         count
+    end
+
+    def insert(index, data)
+        current_node = @head
+
+        (index - 1).times do |n|
+            current_node = current_node.next_node
+        end
+
+        shifted_node = current_node.next_node
+        current_node.next_node = Node.new(data, shifted_node)
+        return current_node.next_node.data
     end
 
     def to_string
