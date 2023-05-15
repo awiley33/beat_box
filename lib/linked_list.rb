@@ -89,9 +89,24 @@ class LinkedList
                 end
             end
         else false
-
         end
+    end
 
+    def pop
+        current_node = @head
+        if current_node.nil?
+            return "Invalid request! This is an empty list."
+        elsif current_node.next_node.nil?
+            current_node.data
+            current_node = nil
+        else
+            until current_node.next_node.next_node.nil?
+                current_node = current_node.next_node
+            end
+        last_node = current_node.next_node.data
+        current_node.next_node = nil
+        end
+        last_node
     end
 
     def to_string
