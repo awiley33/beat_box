@@ -60,8 +60,20 @@ class LinkedList
     end
 
     def find(index, element_count)
-        
-
+        current_node = @head
+        index.times do
+            current_node = current_node.next_node
+        end
+        if element_count == 1
+            string = "#{current_node.data}"
+        else 
+            string = "#{current_node.data}"
+                (element_count - 1).times do
+                    current_node = current_node.next_node
+                    string += " #{current_node.data}"
+                end
+        end
+        string
     end
 
     def includes?(data)
@@ -69,7 +81,7 @@ class LinkedList
         if current_node == nil
             false
         elsif current_node.data == data
-            return true
+            true
         elsif 
             while current_node = current_node.next_node
                 if current_node.data == data
@@ -84,7 +96,7 @@ class LinkedList
 
     def to_string
         current_node = @head
-        if current_node == nil
+        if current_node.nil?
             string = ""
         elsif current_node.next_node.nil?
             string = "#{current_node.data}"
