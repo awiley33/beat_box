@@ -59,6 +59,29 @@ class LinkedList
         return current_node.next_node.data
     end
 
+    def find(index, element_count)
+        
+
+    end
+
+    def includes?(data)
+        current_node = @head
+        if current_node == nil
+            false
+        elsif current_node.data == data
+            return true
+        elsif 
+            while current_node = current_node.next_node
+                if current_node.data == data
+                    true
+                end
+            end
+        else false
+
+        end
+
+    end
+
     def to_string
         current_node = @head
         if current_node == nil
