@@ -43,7 +43,6 @@ class LinkedList
     end
 
     def to_string
-        string = ""
         current_node = @head
         if current_node == nil
             string = ""
