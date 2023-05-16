@@ -7,7 +7,7 @@ class BeatBox
 
     def append(data)
         if data.nil?
-            return "Please specify the beat you want to add."
+            "Please specify the beat you want to add."
         elsif data.include? " "
             data = data.split(" ")
             index = data.count
@@ -15,16 +15,16 @@ class BeatBox
                 list.append(n)
             end
             data = list.find((list.count - index), index)
-            return data
+            data
         else
             list.append(data)
             data = list.to_string
-            return data
+            data
         end
     end
 
     def count
-        return list.count
+        list.count
     end
 
     def play
