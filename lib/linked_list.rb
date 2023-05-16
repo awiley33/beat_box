@@ -59,18 +59,22 @@ class LinkedList
 
     def find(index, element_count)
         current_node = @head
-        index.times do
-            current_node = current_node.next_node
-        end
-        if element_count == 1
-            string = "#{current_node.data}"
-        else 
-            string = "#{current_node.data}"
-                (element_count - 1).times do
-                    current_node = current_node.next_node
-                    string += " #{current_node.data}"
-                end
-        end
+        # if current_node.nil?
+        #     return "Invalid request! This is an empty list."
+        # else
+            index.times do
+                current_node = current_node.next_node
+            end
+            if element_count == 1
+                string = "#{current_node.data}"
+            else 
+                string = "#{current_node.data}"
+                    (element_count - 1).times do
+                        current_node = current_node.next_node
+                        string += " #{current_node.data}"
+                    end
+            end
+        # end
         string
     end
 
