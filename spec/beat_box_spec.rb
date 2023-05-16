@@ -40,5 +40,4 @@ describe BeatBox do
         expect(bb.list.count).to eq(6)
         expect { bb.play }.not_to raise_error
     end
-
 end
