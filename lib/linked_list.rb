@@ -17,7 +17,7 @@ class LinkedList
             current_node.next_node = new_node
         end
         current_node = @head
-        until current_node.next_node == nil
+        until current_node.next_node.nil?
             current_node = current_node.next_node
         end
         current_node.data
