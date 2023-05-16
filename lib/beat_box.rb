@@ -1,6 +1,6 @@
 class BeatBox
     attr_reader :list
-    
+
     def initialize
         @list = LinkedList.new
     end
@@ -14,7 +14,7 @@ class BeatBox
             data = data.each do |n|
                 list.append(n)
             end
-            data = list.find((list.count-index), index)
+            data = list.find((list.count - index), index)
             return data
         else
             list.append(data)
