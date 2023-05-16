@@ -32,4 +32,11 @@ describe BeatBox do
         expect(bb.count).to eq(6)
     end
 
+    it "can play the beat sounds"
+        bb = BeatBox.new
+        bb.append("deep doo ditt woo hoo shu")
+        expect(bb.count).to eq(6)
+        expect(bb.list.count).to eq(6)
+        # expect(bb.play) to play the sound
+
 end
