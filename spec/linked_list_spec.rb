@@ -26,7 +26,6 @@ describe LinkedList do
         list = LinkedList.new
         list.append("doop")
 
-
         expect(list.append("deep")).to eq("deep")
     end
 
@@ -155,7 +154,7 @@ describe LinkedList do
         list.append("shi")
         list.append("shu")
         list.append("blop")
-        # list.pop
+
         expect(list.pop).to eq("blop")
         expect(list.pop).to eq("shu")
         expect(list.to_string).to eq("deep woo shi")
