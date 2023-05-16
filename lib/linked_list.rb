@@ -75,7 +75,7 @@ class LinkedList
 
     def includes?(data)
         current_node = @head
-        if current_node == nil
+        if current_node.nil?
             false
         elsif current_node.data == data
             true
