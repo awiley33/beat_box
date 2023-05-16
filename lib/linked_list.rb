@@ -6,7 +6,6 @@ class LinkedList
     end
 
     def append(data)
-
         if @head.nil?
             @head = Node.new(data)
         else
@@ -21,12 +20,12 @@ class LinkedList
         until current_node.next_node == nil
             current_node = current_node.next_node
         end
-        return current_node.data
+        current_node.data
     end
 
     def prepend(data)
         @head = Node.new(data, @head)
-        return @head.data
+        @head.data
     end
 
     def count
@@ -54,7 +53,7 @@ class LinkedList
 
         shifted_node = current_node.next_node
         current_node.next_node = Node.new(data, shifted_node)
-        return current_node.next_node.data
+        current_node.next_node.data
     end
 
     def find(index, element_count)
@@ -93,7 +92,7 @@ class LinkedList
     def pop
         current_node = @head
         if current_node.nil?
-            return "Invalid request! This is an empty list."
+            "Invalid request! This is an empty list."
         elsif current_node.next_node.nil?
             current_node.data
             current_node = nil
