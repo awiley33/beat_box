@@ -6,7 +6,6 @@ class LinkedList
     end
 
     def append(data)
-
         if @head.nil?
             @head = Node.new(data)
         else
@@ -18,19 +17,19 @@ class LinkedList
             current_node.next_node = new_node
         end
         current_node = @head
-        until current_node.next_node == nil
+        until current_node.next_node.nil?
             current_node = current_node.next_node
         end
-        return current_node.data
+        current_node.data
     end
 
     def prepend(data)
         @head = Node.new(data, @head)
-        return @head.data
+        @head.data
     end
 
     def count
-        if @head == nil
+        if @head.nil?
             count = 0
         elsif @head.next_node.nil?
             count = 1
@@ -54,33 +53,29 @@ class LinkedList
 
         shifted_node = current_node.next_node
         current_node.next_node = Node.new(data, shifted_node)
-        return current_node.next_node.data
+        current_node.next_node.data
     end
 
     def find(index, element_count)
         current_node = @head
-        # if current_node.nil?
-        #     return "Invalid request! This is an empty list."
-        # else
-            index.times do
-                current_node = current_node.next_node
-            end
-            if element_count == 1
-                string = "#{current_node.data}"
-            else 
-                string = "#{current_node.data}"
-                    (element_count - 1).times do
-                        current_node = current_node.next_node
-                        string += " #{current_node.data}"
-                    end
-            end
-        # end
+        index.times do
+            current_node = current_node.next_node
+        end
+        if element_count == 1
+            string = "#{current_node.data}"
+        else 
+            string = "#{current_node.data}"
+                (element_count - 1).times do
+                    current_node = current_node.next_node
+                    string += " #{current_node.data}"
+                end
+        end
         string
     end
 
     def includes?(data)
         current_node = @head
-        if current_node == nil
+        if current_node.nil?
             false
         elsif current_node.data == data
             true
@@ -97,7 +92,7 @@ class LinkedList
     def pop
         current_node = @head
         if current_node.nil?
-            return "Invalid request! This is an empty list."
+            "Invalid request! This is an empty list."
         elsif current_node.next_node.nil?
             current_node.data
             current_node = nil
